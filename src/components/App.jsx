@@ -120,7 +120,8 @@ export class App extends Component {
           </>
             )
         }
-          if (status === 'resolved') {
+    if (status === 'resolved') {
+     
             return (
               <div
                 style={{

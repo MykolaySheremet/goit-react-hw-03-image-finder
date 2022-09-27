@@ -1,7 +1,10 @@
 import { Component } from "react";
 import { toast } from 'react-toastify';
-import { SerchFormBox, Header, SearchFormButton, Span, SearchFormInput } from './Serchbar.styled';
+import { SerchFormBox, Header, SearchFormButton,SearchFormInput } from './Serchbar.styled';
 import { MdOutlineFindInPage } from "react-icons/md";
+
+
+
 
 export class Serchbar extends Component {
     state={
@@ -27,8 +30,9 @@ export class Serchbar extends Component {
 
 
     render() {
-        return (<Header>
-            <SerchFormBox
+        return (
+        <Header>
+                  <SerchFormBox
                 onSubmit={this.handleNameChange}>
                         <SearchFormButton type="submit">
                     
@@ -43,7 +47,9 @@ export class Serchbar extends Component {
                     autoFocus
                     placeholder="Search images and photos"
                     />
-                </SerchFormBox>
-                </Header>)
+            </SerchFormBox>
+            </Header>
+            
+            )
     }
 }
