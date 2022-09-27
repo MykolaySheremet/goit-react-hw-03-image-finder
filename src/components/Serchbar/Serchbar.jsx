@@ -2,8 +2,7 @@ import { Component } from "react";
 import { toast } from 'react-toastify';
 import { SerchFormBox, Header, SearchFormButton,SearchFormInput } from './Serchbar.styled';
 import { MdOutlineFindInPage } from "react-icons/md";
-
-
+import PropTypes from 'prop-types';
 
 
 export class Serchbar extends Component {
@@ -31,25 +30,27 @@ export class Serchbar extends Component {
 
     render() {
         return (
-        <Header>
-                  <SerchFormBox
-                onSubmit={this.handleNameChange}>
+            <Header>
+                <SerchFormBox
+                    onSubmit={this.handleNameChange}>
                         <SearchFormButton type="submit">
-                    
-                        
-                        <MdOutlineFindInPage size={40} />
+                            <MdOutlineFindInPage size={40} />
                         </SearchFormButton>
 
                         <SearchFormInput onChange={this.handleInputChange}
-                    type="text"
-                    value={this.state.searchPictures}
-                    autoComplete="off"
-                    autoFocus
-                    placeholder="Search images and photos"
+                            type="text"
+                            value={this.state.searchPictures}
+                            autoComplete="off"
+                            autoFocus
+                            placeholder="Search images and photos"
                     />
-            </SerchFormBox>
+                </SerchFormBox>
             </Header>
             
-            )
+        )
     }
+}
+
+Serchbar.propTypes = {
+    propSubmit: PropTypes.func.isRequired,
 }

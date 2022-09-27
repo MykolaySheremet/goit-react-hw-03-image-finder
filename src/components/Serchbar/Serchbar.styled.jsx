@@ -63,7 +63,7 @@ export const SearchFormInput = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;
-  font-size: 20px;
+  font-size: ${p => p.theme.fontSizes.l};
   border: none;
   outline: none;
   padding-left: 4px;
@@ -71,13 +71,17 @@ export const SearchFormInput = styled.input`
 
   ::placeholder {
   font: inherit;
-  font-size: 18px;
+  font-size: ${p => p.theme.fontSizes.l};
   color: red;
 }
 
   `
 
+export const Title = styled.h1`
+  text-align: center;
 
+
+`
 
 
   

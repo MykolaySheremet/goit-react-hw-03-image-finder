@@ -8,11 +8,11 @@ export const Button = styled.button`
     text-align: center;
     display: inline-block;
     color: #fff;
-    border: 0;
+    border:  ${p => p.theme.space[0]}px;
     text-decoration: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 18px;
+    font-size:  ${p => p.theme.fontSizes.m};
     line-height: 24px;
     font-style: normal;
     font-weight: 500;

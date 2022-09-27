@@ -1,19 +1,23 @@
-import { ThreeCircles } from  'react-loader-spinner'
+import { ThreeCircles } from 'react-loader-spinner'
+import {Box,Text} from './Loader.styled';
 
 export const Loader = () => {
     return (<> 
-        <ThreeCircles
-  height="50"
-  width="50"
-  color="#4fa94d"
-  wrapperStyle={{}}
-  wrapperClass=""
-  visible={true}
-  ariaLabel="three-circles-rotating"
-  outerCircleColor=""
-  innerCircleColor=""
-  middleCircleColor=""
-        /> Loading ...
+        <Box>
+            <ThreeCircles
+            height="50"
+            width="50"
+            color="red"
+            wrapperStyle={{}}
+            wrapperClass=" text-aligt"
+            visible={true}
+            ariaLabel="three-circles-rotating"
+            outerCircleColor=""
+            innerCircleColor=""
+            middleCircleColor=""
+            />
+            <Text>Loading...</Text>
+            </Box>
         </>
 
 )

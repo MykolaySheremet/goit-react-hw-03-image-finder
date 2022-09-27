@@ -1,13 +1,7 @@
 import { Component } from "react";
 import { ImageGalleryItems, ImageGalleryItemImage } from './ImageGalleryItem.styled';
 import { Modal } from 'components/Modal/Modal';
-
-// export class Serchbar extends Component {
-//     state={
-//         searchPictures: '',
-//         modalIsOpen: false,
-//     }
-
+import PropTypes from 'prop-types';
 
 export class ImageGalleryItem extends Component {
 
@@ -16,17 +10,12 @@ export class ImageGalleryItem extends Component {
     };
 
     togglModal = () => {
-        console.log('визиваюсь')
+        // console.log('визиваюсь')
         this.setState(prevState => ({
             modalIsOpen: !prevState.modalIsOpen
         }))
         // console.log(this.state.modalIsOpen);
-    }
-
-    // closeModal = () => {
-    //     this.setState({modalIsOpen: false,})
-    // }
-    
+    }    
 
     render() {
         
@@ -52,8 +41,13 @@ export class ImageGalleryItem extends Component {
         )
         
     }
-    
-    
+
 }
     
+
+ImageGalleryItem.propTypes = {
+    webformatURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+    largeImageURL:PropTypes.string.isRequired
+}
 
