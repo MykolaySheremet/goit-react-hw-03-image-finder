@@ -1,53 +1,49 @@
 import { Component } from "react";
 import { toast } from 'react-toastify';
-import { SerchFormBox } from './Serchbar.styled';
-
-
-
+import { SerchFormBox, Header, SearchFormButton, Span, SearchFormInput } from './Serchbar.styled';
+import { MdOutlineFindInPage } from "react-icons/md";
 
 export class Serchbar extends Component {
     state={
-        pictures: '',
+        searchPictures: '',
     }
 
     handleNameChange = (e) => {
         e.preventDefault();
         
-        if (this.state.pictures.trim() === '') {
+        if (this.state.searchPictures.trim() === '') {
             return toast.error("Please input some name pictures to find ");
         }
         
-        this.props.propSubmit(this.state.pictures);
-        this.setState({ pictures: '' });
-
-   
+        this.props.propSubmit(this.state.searchPictures);
+        this.setState({ searchPictures: '' });
     }
+
 
     handleInputChange = (e) => {
 
-        this.setState({ pictures: e.currentTarget.value.toLowerCase()})
-       
+        this.setState({ searchPictures: e.currentTarget.value.toLowerCase()})
     }
 
 
-
     render() {
-        return (<header className="searchbar">
+        return (<Header>
             <SerchFormBox
                 onSubmit={this.handleNameChange}>
-                        <button type="submit" className="button">
-                            <span className="button-label">Search</span>
-                        </button>
+                        <SearchFormButton type="submit">
+                    
+                        
+                        <MdOutlineFindInPage size={40} />
+                        </SearchFormButton>
 
-                        <input onChange={this.handleInputChange}
-                    className="input"
+                        <SearchFormInput onChange={this.handleInputChange}
                     type="text"
-                    value={this.state.pictures}
+                    value={this.state.searchPictures}
                     autoComplete="off"
                     autoFocus
                     placeholder="Search images and photos"
                     />
-                    </SerchFormBox>
-                </header>)
+                </SerchFormBox>
+                </Header>)
     }
 }
